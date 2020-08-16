@@ -20,8 +20,8 @@ const server = new ApolloServer({
   debug: process.env.NODE_ENV === "development",
 });
 
-server.applyMiddleware({ app, path: "/" });
+server.applyMiddleware({ app, path: "/", cors: true });
 
 app.listen(PORT, () => {
-  console.log(`App listening on localhost:${PORT}${server.graphqlPath}`);
+  console.log(`App listening on localhost:${PORT}`);
 });
